@@ -1,17 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lchristi <lchristi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/11 20:23:24 by lchristi          #+#    #+#             */
+/*   Updated: 2021/12/11 20:24:21 by lchristi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
 
-int main()
+int	main()
 {
-    printf("original function\n");
-    printf("=================\n");
-    printf("hello world!\n");
-    printf("%%_test %%\n");
-    printf("decimal_test_or %d\n", 10);
-    printf("my function\n");
-    printf("=================\n");
-    ft_printf("sadsad\n");
-    ft_printf("char_test %c\n", 'c');
-    ft_printf("decimal_test %d\n", 10);
+	int	q;
+
+	printf("%x\n", 123);
+	ft_printf("%p %%\n", 123);
+	return (0);
 }

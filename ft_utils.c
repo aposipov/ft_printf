@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchristi <lchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/06 17:45:57 by lchristi          #+#    #+#             */
-/*   Updated: 2021/12/11 20:10:45 by lchristi         ###   ########.fr       */
+/*   Created: 2021/12/11 19:59:47 by lchristi          #+#    #+#             */
+/*   Updated: 2021/12/11 20:22:45 by lchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdarg.h>
-//# include <stdlib.h>
+int	ft_printadr(unsigned long int n)
+{
+	int		i;
+	int		total;
+	char	*base;
+	char	result[16];
 
-int	ft_printf(const char *format, ...);
-int	ft_printchar(int c);
-int	ft_check(char format, va_list ap);
-int	ft_printadr(unsigned long int n);
-
-#endif
+	i = 0;
+	base = "0123456789abcdef";
+	if (n == 0)
+		return (write(1, "0x0", 3));
+	while (n > 0)
+	{
+		result[i++] = base[n % 16];
+		n /= 16;
+	}
+	total = ft_printstr("0x");
+	while (--i >= 0)
+		total += write(1, &result[i], 1);
+	return (total);
+}
