@@ -1,5 +1,6 @@
 # ft_printf  
 It will manage the following conversions: cspdiuxX%  
+  
 %c print a single character  
 %s print a string of characters  
 %p The void * pointer argument is printed in hexadecimal  
