@@ -22,5 +22,6 @@ int	main()
 	ft_printf("%c %s\n", 'a', "bcd");
 	ft_printf("%u %u %%\n", 123, -10);
 	ft_printf("%d %i %d %i\n", -1, 1, 10, -10);
+	ft_printf("%p %p\n", 0, 0);
 	return(0);
 }

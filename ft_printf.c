@@ -24,7 +24,10 @@ int	ft_printstr(char *str)
 
 	len = 0;
 	if (!str)
-		return (0);
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	while (*str)
 	{
 		write(1, str++, 1);
