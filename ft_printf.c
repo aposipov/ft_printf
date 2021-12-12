@@ -6,7 +6,7 @@
 /*   By: lchristi <lchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 17:23:19 by lchristi          #+#    #+#             */
-/*   Updated: 2021/12/11 20:20:32 by lchristi         ###   ########.fr       */
+/*   Updated: 2021/12/12 17:02:18 by lchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,19 @@ int	ft_check(char format, va_list ap)
 		count += ft_printchar(va_arg(ap, int));
 	else if (format == 's')
 		count += ft_printstr(va_arg(ap, char *));
-	if (format == 'p')
+	else if (format == 'p')
+	{
+		count += write(1, "0x", 2);
 		count += ft_printadr(va_arg(ap, unsigned long int));
-	if (format == 'd' || format == 'i')
+	}
+	else if (format == 'd' || format == 'i')
 		count += ft_printnum(va_arg(ap, int));
-	if (format == 'u')
+	else if (format == 'u')
 		count += ft_printu(va_arg(ap, unsigned int));
-	if (format == 'x')
-		count += ft_printhex(va_arg(ap, unsigned int));
-	if (format == 'X')
-		count += ft_printhexu(va_arg(ap, unsigned int));
-	/*if (*format == '%')
-	        count += write(1, "%", 1);*/
+	else if (format == 'x')
+		count += ft_printhex(va_arg(ap, unsigned int), 1);
+	else if (format == 'X')
+		count += ft_printhex(va_arg(ap, unsigned int), 0);
 	else
 		count = 0;
 	return (count);
@@ -75,8 +76,6 @@ int	ft_printf(const char *format, ...)
 			write(1, format + 1, 1);
 			format += 2;
 		}
-		else if (*(format + 1) == '\0')
-			write(1, ++format, 1);
 		else
 		{
 			count += ft_check(*(format + 1), ap) - 1;

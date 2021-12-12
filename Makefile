@@ -13,18 +13,25 @@
 NAME = libftprintf.a
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
-HEADER = libftprintf.a
+HEADER = ft_printf.h
+SRC = ft_printf.c ft_utils.c
+OBJ = ${patsubst %.c,%.o,${SRC}}
+RM = rm -f
 
-all:
+all:		${NAME}
 
-${NAME}:
+${NAME}: 	${OBJ}
+			ar rcs ${NAME} $?
 
-%.o:%.c
+%.o : %.c	Makefile ${HEADER}
+			${CC} ${FLAGS} -c $< -o $@
 
 clean:
+			${RM} ${OBJ}
 
-fclean:
+fclean:		clean
+			${RM} ${NAME}
 
-re:
+re:			fclean all
 
 .PHONY: all clean fclean re

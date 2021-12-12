@@ -19,7 +19,11 @@
 
 int	ft_printf(const char *format, ...);
 int	ft_printchar(int c);
+int	ft_printstr(char *str);
 int	ft_check(char format, va_list ap);
-int	ft_printadr(unsigned long int n);
+int	ft_printadr(unsigned long int ap);
+int	ft_printnum(int ap);
+int	ft_printu(unsigned int ap);
+int	ft_printhex(unsigned int ap, int f);
 
 #endif
