@@ -1,4 +1,4 @@
-# ft_printf  
+## ft_printf  
 It will manage the following conversions: cspdiuxX%  
   
 %c print a single character  
