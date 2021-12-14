@@ -1,4 +1,4 @@
-### ft_printf  
+## ft_printf  
 It will manage the following conversions: cspdiuxX%  
   
 %c print a single character  
@@ -11,11 +11,11 @@ It will manage the following conversions: cspdiuxX%
 %X print a number in hexadecimal (base 16), with uppercase  
 %% print a percent sign  
 
-# tests:  
+## tests:  
 https://github.com/Tripouille/printfTester  
 https://github.com/paulo-santana/ft_printf_tester  
 
-# usefull links:
+## usefull links:
 https://csnotes.medium.com/ft-printf-tutorial-42project-f09b6dc1cd0e  
 https://www.notion.so/ft_printf-3e358ed673d14164b88de9eb428f3c6a  
 https://learnc.info/c/vararg_functions.html  
